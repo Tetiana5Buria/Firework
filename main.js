@@ -9,10 +9,10 @@ const fireworks = new Fireworks(container, {
   autoresize: true,
 });
 fireworks.start();
-const boom = new Audio("/dist/boom1.mp3");
+const boom = new Audio("./dist/boom1.mp3");
 boom.play();
-/* window.addEventListener("click", () => {
+window.addEventListener("click", () => {
   boom.currentTime = 0;
-}); */
+});
 
 //fireworks.stop();

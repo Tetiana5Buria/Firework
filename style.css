@@ -8,10 +8,37 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background: radial-gradient(circle at 30% 70%, #2a0a3a 0%, #11071f 50%, #000 100%);
     overflow: hidden;
-    background: #181818;
+    font-family: 'Manrope',
+        sans-serif;
 }
 
+
+.bg-aura {
+    position: absolute;
+
+    background:
+        radial-gradient(circle at 20% 80%, rgba(17, 2, 32, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(80, 40, 84, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(100, 200, 255, 0.2) 0%, transparent 60%);
+
+    filter: blur(80px);
+}
+
+.snows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.snows span {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: fall linear infinite;
+}
 
 .container {
     width: 100%;
@@ -19,45 +46,42 @@ body {
     position: relative;
 }
 
-
 .text-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(0);
     text-align: center;
-    pointer-events: none;
+
 }
 
 h1 {
-    font-family: "Ms Madi", cursive;
-    font-size: 72px;
-    font-weight: 400;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    font-size: clamp(60px, 12vw, 160px);
+    line-height: 0.9;
 
-    background: linear-gradient(110deg,
-            #fff7e6 0%,
-            #ffe29f 20%,
-            #ffcc70 40%,
-            #e5d6ff 70%,
-            #c9b6ff 100%);
-    background-clip: text;
+
+    background: linear-gradient(135deg,
+            #fff8e1 0%,
+            #ffdca8 15%,
+            #ff9e9e 30%,
+            #e0c3ff 50%,
+            #a8f0ff 70%,
+            #ffffff 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
-
-
-    filter:
-        drop-shadow(0 0 12px rgba(255, 220, 140, 0.6)) drop-shadow(0 0 30px rgba(180, 150, 255, 0.25));
-
+    filter: drop-shadow(0 0 30px rgba(255, 200, 120, 0.7)) drop-shadow(0 0 80px rgba(180, 100, 255, 0.5));
     animation: glow 2s infinite ease-in-out;
 }
 
-
 span {
-    display: block;
     font-size: 46px;
+    font-weight: 700;
     margin-top: 10px;
+    letter-spacing: normal;
     opacity: 0.85;
-
     background: linear-gradient(90deg,
             #fff7e6,
             #ffe29f,
@@ -66,10 +90,42 @@ span {
     -webkit-background-clip: text;
     color: transparent;
 
-    animation: fadeIn 3s ease forwards;
+    /*  animation: fadeIn 3s ease forwards; */
 }
 
 
+
+/* @keyframes aura {
+
+    0%,
+    50% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(5%, -5%) rotate(5deg);
+    }
+} */
+
+
+
+
+/* @keyframes hue {
+    0% {
+        filter: hue-rotate(0deg) drop-shadow(0 0 30px #ffdc88);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) drop-shadow(0 0 30px #b388ff);
+    }
+} */
+
+/* @keyframes fadeInUp {
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+} */
 @keyframes glow {
     0% {
         filter:
@@ -87,14 +143,9 @@ span {
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
+@keyframes fall {
     to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateY(100dvh) rotate(360deg);
+        opacity: 0;
     }
 }

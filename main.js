@@ -20,3 +20,22 @@ window.addEventListener("DOMContentLoaded", () => {
   );
   //fireworks.stop();
 });
+const snow = document.getElementById("snow");
+for (let i = 0; i < 100; i++) {
+  const flake = document.createElement("span");
+  flake.style.background = 'url("fl.png") center/contain no-repeat';
+  flake.style.width = "15px";
+  flake.style.height = "15px";
+  flake.style.display = "block"; // обов’язково!
+  flake.style.backgroundSize = "cover";
+  flake.style.width = "20px";
+  flake.style.height = "20px";
+  flake.style.opacity = Math.random() * 0.6 + 0.4;
+
+  flake.style.left = Math.random() * 100 + "%";
+  flake.style.top = Math.random() * -100 - 20 + "px";
+
+  flake.style.animationDuration = Math.random() * 5 + 5 + "s";
+  flake.style.animationDelay = Math.random() * 5 + "s";
+  snow.appendChild(flake);
+}

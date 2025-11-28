@@ -14,10 +14,17 @@ body {
         sans-serif;
 }
 
+.fireworks {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+}
+
 
 .bg-aura {
-    position: absolute;
-
+    position: relative;
     background:
         radial-gradient(circle at 20% 80%, rgba(17, 2, 32, 0.4) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(80, 40, 84, 0.35) 0%, transparent 50%),
@@ -33,18 +40,14 @@ body {
     pointer-events: none;
 }
 
-.snows span {
+.snows div {
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
     animation: fall linear infinite;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
+
 
 .text-container {
     position: absolute;
@@ -55,7 +58,7 @@ body {
 
 }
 
-h1 {
+.text-container h1 {
     font-family: 'Clash Display', sans-serif;
     font-weight: 700;
     font-size: clamp(60px, 12vw, 160px);
@@ -76,8 +79,8 @@ h1 {
     animation: glow 2s infinite ease-in-out;
 }
 
-span {
-    font-size: 46px;
+.text-container span {
+    font-size: clamp(60px, 12vw, 160px);
     font-weight: 700;
     margin-top: 10px;
     letter-spacing: normal;
@@ -90,42 +93,10 @@ span {
     -webkit-background-clip: text;
     color: transparent;
 
-    /*  animation: fadeIn 3s ease forwards; */
 }
 
 
 
-/* @keyframes aura {
-
-    0%,
-    50% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(5%, -5%) rotate(5deg);
-    }
-} */
-
-
-
-
-/* @keyframes hue {
-    0% {
-        filter: hue-rotate(0deg) drop-shadow(0 0 30px #ffdc88);
-    }
-
-    100% {
-        filter: hue-rotate(360deg) drop-shadow(0 0 30px #b388ff);
-    }
-} */
-
-/* @keyframes fadeInUp {
-    to {
-        opacity: 0.9;
-        transform: translateY(0);
-    }
-} */
 @keyframes glow {
     0% {
         filter:
